@@ -1,0 +1,63 @@
+import fs from 'fs';
+
+/* comprobar que existe ruta*/
+export const existePath = (path) => fs.existsSync(path);
+console.log(existePath('./ejercicios'));
+
+/* leer directorio */
+export const leerCarpeta = (carpeta) => fs.readdirSync(carpeta)
+console.log(leerCarpeta('./ejercicios'));
+
+/* leer archivos */
+export const leerArchivo = (leer) =>  fs.readFile(leer, (error,data)=>{
+    if(error){
+        console.log(error)
+    } console.log(data.toString());
+    });
+console.log(leerArchivo('./ejercicios/archivo.md'));
+
+
+
+
+
+
+/* leer directorio */
+/* export const leerCarpeta = (carpeta) => fs.readdirSync(carpeta, (error,archivos) => {
+    archivos.forEach(archivo=>{
+        console.log(archivo);
+    });
+});
+console.log(leerCarpeta('./ejercicios')); */
+/* export const existePath = (path) => fs.existsSync(path, (exists)=>{
+    if(exists){
+        console.log('file exist');
+    }
+});
+console.log(existePath('./ejercicios')); */
+
+
+
+/* leer directorios */
+/* fs.readdir('./ejercicios', (error,archivos) => {
+    archivos.forEach(archivo=>{
+        console.log(archivo);
+    });
+}); */
+
+
+
+
+/* fs.readFile('./ejercicios/archivo.md', function(error,data){
+    if(error){
+        console.log(error)
+    } console.log(data.toString());
+    }); */
+
+/* function leerArchivo(leer){
+    fs.readFile(leer, function(error,data){
+        if(error){
+            console.log(error)
+        } console.log(data.toString());
+        });
+};
+console.log(leerArchivo('./ejercicios/archivo.md')); */
