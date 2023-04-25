@@ -1,3 +1,3 @@
-import { leerCarpeta } from "./ejerciciouno.js";
+import { leerCarpeta } from "./api.js";
 
 console.log(leerCarpeta('./'));
