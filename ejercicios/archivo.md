@@ -1,1 +1,1 @@
-mi gatita humita
+este es un texto sobre mi gatita humita

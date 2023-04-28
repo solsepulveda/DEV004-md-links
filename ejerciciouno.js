@@ -71,3 +71,11 @@ console.log(existePath('./ejercicios')); */
         });
 };
 console.log(leerArchivo('./ejercicios/archivo.md')); */
+
+/* leer archivos */
+/* export const leerArchivo = (leer) =>  fs.readFile(leer, (error,data)=>{
+    if(error){
+        console.log(error)
+    } console.log(data.toString());
+    });
+console.log(leerArchivo('./ejercicios/archivo.md')); */
