@@ -25,7 +25,9 @@ export const leerArchivo = (leer) =>  fs.readFile(leer, (error,data)=>{
     });
 console.log(leerArchivo('./ejercicios/archivo.md'));
 
-
+/* ¿es absoluto? boolean */
+export const isAbsolute = (userpath) => path.isAbsolute(userpath);
+/* console.log('es absoluto?:',isAbsolute('./ejercicios')); */
 
 
 
