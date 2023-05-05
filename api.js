@@ -1,4 +1,5 @@
-import fs from 'fs';
+import { match } from 'assert';
+import fs, { read } from 'fs';
 import path from 'path';
 
 /*¿existe la ruta? boolean*/
@@ -24,8 +25,8 @@ export const readDir = (dir) => {
 export const ismdFile = (file) => path.extname(file) === '.md';
 /* console.log(ismdFile('./ejercicios/archivo.md')) */
 
-/* leer archivo*/
-/* export const readFile = (read) => {
+/* leer archivo y extraer los links*/
+export const readFile = (read) => {
     return new Promise((resolve, reject) => {
         fs.readFile(read, 'utf-8', (error, data) => {
             if (error) {
@@ -37,33 +38,20 @@ export const ismdFile = (file) => path.extname(file) === '.md';
     });
 };
 
-readFile('./ejercicios/archivo.md')
-    .then((result) => console.log('leer archivo:',result.toString()))
-    .catch((error) => console.error(error)); */
+readFile('./ejercicios/archivo2.md')
+    .then((result) => {
+      const regex = /\[([^\]]+)]\((https?:\/\/[^\s)]+)\)/gi;
+      const content = result.toString()
+      const matches = content.matchAll(regex)
+      for (const match of matches) {
+        console.log(
+          match[1],
+          match[2],
+        );
+      }
+    })
+    .catch((error) => console.error(error)); //poner no hay links
 
-
-/* intentando aprender a buscar link  */
-/* export const mdfile = (md) => ismdFile(md) ? readFile(md) :  'Invalid format';
-console.log(mdfile('./ejercicios/archivo.md')); */
-/* var expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-var regex = new RegExp(expression);
-
-var check = [
-  'https://es.wikipedia.org/wiki/D%C3%ADa_de_la_Madre'
-];
-
-check.forEach(function(entry) {
-  let match = entry.match(regex);
-  if (match) {
-    console.log('sí');
-  } else {
-   console.log('no');
-  }
-}); */
-
-
-
-/* Extraer links*/
 
 /* validar*/
 

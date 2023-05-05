@@ -1,4 +1,4 @@
-import { isAbsolute, ismdFile, pathExist } from "../api.js";
+import { isAbsolute, isdir, ismdFile, pathExist } from "../api.js";
 import { mdLinks } from "../index.js";
 
 //Debería retornar una promesa
@@ -9,7 +9,7 @@ describe("mdLinks", () => {
   });
 });
 
-//Verificar la función de si existe la ruta
+//Verificar la función de si existe la ruta - boolean
 describe("pathExist", () => {
   it("deberia ser una funcion", () => {
     expect(typeof pathExist).toBe("function");
@@ -22,23 +22,20 @@ describe("pathExist", () => {
   });
 });
 
-//Verificar que transforma a absoluto
+//Verificar que transforma a absoluto -array
 describe("isabsolute", () => {
-  it("deberia ser una funcion", () => {
-    expect(typeof ismdFile).toBe("function");
-  });
 
   it("deberia ser una funcion", () => {
     expect(typeof isAbsolute).toBe("function");
   });
   it("deberia resolver la ruta a absoluta", () => {
     expect(isAbsolute("./ejercicios/archivo.md")).toBe(
-      "D:DesktopmdLinksDEV004-md-linksejerciciosarchivo.md"
+      'D:\\Desktop\\mdLinks\\DEV004-md-links\\ejercicios\\archivo.md'
     );
   });
 });
 
-//Verificar la función de si es .md
+//Verificar la función de si es .md -boolean
 describe("ismdfile", () => {
   it("deberia ser una funcion", () => {
     expect(typeof ismdFile).toBe("function");
@@ -49,5 +46,21 @@ describe("ismdfile", () => {
   });
   it("Debería retornar false si no existe", () => {
     expect(ismdFile("./ejercicios/archivo.txt")).toBe(false);
+  });
+});
+
+//Verificar la función de si es directorio -boolean
+describe('isdir',()=>{
+
+  it('Debería ser una función', ()=>{
+    expect(typeof isdir).toBe("function");
+  });
+
+  it('si es directorio retorna true', ()=>{
+    expect(isdir('./ejercicios')).toBe(true);
+  });
+
+  it('si es un archivo retorna false', () => {
+    expect(isdir('./ejercicios/archivo.md')).toBe(false);
   });
 });

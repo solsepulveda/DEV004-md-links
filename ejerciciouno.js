@@ -3,19 +3,19 @@ import path from 'path';
 
 /*¿existe la ruta?*/
 export const existePath = (path) => fs.existsSync(path);
-console.log(existePath('./ejercicios'));
+/* console.log(existePath('./ejercicios')); */
 
 /* ¿es absoluto? */
 export const absolutepath = (userpath) => path.isAbsolute(userpath);
-console.log(absolutepath('\Desktop\mdLinks\DEV004-md-links\ejercicios'));
+/* console.log(absolutepath('D:\\Desktop\\mdLinks\\DEV004-md-links\\ejercicios\\archivo.md')); */
 
 /* convertir a absoluto si no lo es*/
 export const toAbsolute = (userabs) => path.resolve(userabs);
-console.log(toAbsolute('./ejercicios'));
+/* console.log(toAbsolute('C:\\Users\\Laboratoria\\Desktop\\LABORATORIA\\DEV004-data-lovers')); */
 
 /* leer directorio */
 export const leerCarpeta = (carpeta) => fs.readdirSync(carpeta)
-console.log(leerCarpeta('./ejercicios'));
+/* console.log(leerCarpeta('./ejercicios')); */
 
 /* leer archivos */
 export const leerArchivo = (leer) =>  fs.readFile(leer, (error,data)=>{
@@ -23,7 +23,7 @@ export const leerArchivo = (leer) =>  fs.readFile(leer, (error,data)=>{
         console.log(error)
     } console.log(data.toString());
     });
-console.log(leerArchivo('./ejercicios/archivo.md'));
+/* console.log(leerArchivo('./ejercicios/archivo.md')); */
 
 /* ¿es absoluto? boolean */
 export const isAbsolute = (userpath) => path.isAbsolute(userpath);
