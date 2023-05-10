@@ -1,58 +1,49 @@
-import { match } from 'assert';
-import fs, { read } from 'fs';
+import fs, { read, readFile } from 'fs';
 import path from 'path';
 
+export const route = process.argv[2];
+
 /*¿existe la ruta? boolean*/
-export const pathExist = (path) => fs.existsSync(path);
-/* console.log('existe la ruta?:',pathExist('./ejercicios')); */
+export const pathExist = (path) => fs.existsSync(path); //error: puede no existir path
+export const isthisabs = (isA) => path.isAbsolute(isA); // no hay error
+export const isdir= (path) => fs.lstatSync(path).isDirectory() // no hay error
+export const toabsolute = (route) => path.resolve(route); // no hay error
+export const ismdFile = (file) => path.extname(file) === '.md'; //puede haber error
 
-/*se convertirá a relativa - boolean*/
-export const isAbsolute = (abs) => path.isAbsolute(abs) ? abs : path.resolve(abs);
-/* console.log(absOrRel('./ejercicios/archivo.md')); */
-
-/*¿Es un directorio? boolean*/
-export const isdir= (path) => fs.lstatSync(path).isDirectory()
-/* console.log('¿Es un directorio?:',fileOrDir('./ejercicios')); */
-
-/* leer directorio - se convertirá en relativo*/
-export const readDir = (dir) => {
-  const files = fs.readdirSync(dir);
-  return files.map((file) => path.resolve(file));
-};
-/* console.log('leer directorio:',readDir('./ejercicios')); */
-
-/* ¿es un archivo .md? */
-export const ismdFile = (file) => path.extname(file) === '.md';
-/* console.log(ismdFile('./ejercicios/archivo.md')) */
-
-/* leer archivo y extraer los links*/
-export const readFile = (read) => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(read, 'utf-8', (error, data) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(data);
-            }
+export const readAll = {
+    readFile: (read) => {
+        return new Promise((resolve, reject) => {
+            fs.readFile(read, 'utf-8', (error, data) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(data);
+                }
+            });
         });
-    });
-};
+    },
 
-readFile('./ejercicios/archivo2.md')
-    .then((result) => {
-      const regex = /\[([^\]]+)]\((https?:\/\/[^\s)]+)\)/gi;
-      const content = result.toString()
-      const matches = content.matchAll(regex)
-      for (const match of matches) {
-        console.log(
-          match[1],
-          match[2],
-        );
+    getLinks: (result) => {
+        const regex = /\[([^\]]+)]\((https?:\/\/[^\s)]+)\)/gi;
+        const content = result.toString();
+        const matches = content.matchAll(regex);
+        const data = [];
+        for (const match of matches) {
+          const route = process.argv[2];
+          const hola = toabsolute(route)
+          data.push({text:match[1], href: match[2], file: hola});
+        }
+        return data
       }
-    })
-    .catch((error) => console.error(error)); //poner no hay links
+    }
+
+    readAll.readFile('./ejercicios/archivo.md')
+      .then((result) => {
+        const links = readAll.getLinks(result);
+        /* console.log(links); */
+      })
+      .catch((error) => console.error(error));
 
 
-/* validar*/
 
 
