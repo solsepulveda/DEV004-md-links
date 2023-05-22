@@ -1,10 +1,12 @@
-import fs, { read, readFile } from 'fs';
+import fs, { link, read, readFile } from 'fs';
 import path from 'path';
+import axios, {isCancel, AxiosError} from 'axios';
+import fetch from 'node-fetch';
 
-export const route = process.argv[2];
+export var route = process.argv[2];
 
 /*¿existe la ruta? boolean*/
-export const pathExist = (path) => fs.existsSync(path); //error: puede no existir path
+export const pathExist = (path) => fs.existsSync(path);
 export const isthisabs = (isA) => path.isAbsolute(isA); // no hay error
 export const isdir= (path) => fs.lstatSync(path).isDirectory() // no hay error
 export const toabsolute = (route) => path.resolve(route); // no hay error
@@ -29,21 +31,28 @@ export const readAll = {
         const matches = content.matchAll(regex);
         const data = [];
         for (const match of matches) {
-          const route = process.argv[2];
-          const hola = toabsolute(route)
-          data.push({text:match[1], href: match[2], file: hola});
+          data.push({text:match[1], href: match[2], file:route});
         }
         return data
+      },
+      validateLinks: (links) => {
+        const validation = links.map((link) =>
+          fetch(link.href).then((response) => {
+            return { text: link.text, href: link.href, file: route, status: response.status, ok: response.statusText };
+          }).catch((error)=>{
+          })
+        );
+        return Promise.all(validation);
       }
     }
 
     readAll.readFile('./ejercicios/archivo.md')
       .then((result) => {
         const links = readAll.getLinks(result);
-        /* console.log(links); */
       })
       .catch((error) => console.error(error));
 
 
-
-
+      var links = [
+        { text: 'Link 1', href: 'https://es.wikipedia.org/wiki/Markdown', file: 'file1' }
+      ];

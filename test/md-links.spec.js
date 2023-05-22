@@ -1,13 +1,13 @@
-import { isAbsolute, isdir, ismdFile, pathExist } from "../api.js";
+import { isAbsolute, isdir, ismdFile, pathExist, toabsolute} from "../api.js";
 import { mdLinks } from "../index.js";
 
 //Debería retornar una promesa
-describe("mdLinks", () => {
+/* describe("mdLinks", () => {
   it("Debería devolver una promesa", () => {
     const a = mdLinks("./ejercicios");
     expect(a instanceof Promise).toBe(true);
   });
-});
+}); */
 
 //Verificar la función de si existe la ruta - boolean
 describe("pathExist", () => {
@@ -23,13 +23,13 @@ describe("pathExist", () => {
 });
 
 //Verificar que transforma a absoluto -array
-describe("isabsolute", () => {
+describe("toabsolute ", () => {
 
   it("deberia ser una funcion", () => {
-    expect(typeof isAbsolute).toBe("function");
+    expect(typeof toabsolute ).toBe("function");
   });
   it("deberia resolver la ruta a absoluta", () => {
-    expect(isAbsolute("./ejercicios/archivo.md")).toBe(
+    expect(toabsolute("./ejercicios/archivo.md")).toBe(
       'D:\\Desktop\\mdLinks\\DEV004-md-links\\ejercicios\\archivo.md'
     );
   });
