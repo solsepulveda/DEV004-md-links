@@ -1,6 +1,5 @@
 import { mdLinks } from "./index.js";
 import { argv } from "node:process";
-import chalk from "chalk";
 
 const path = process.argv[2];
 const valstat =
