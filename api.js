@@ -38,7 +38,11 @@ export const readAll = {
       validateLinks: (links) => {
         const validation = links.map((link) =>
           fetch(link.href).then((response) => {
-            return { text: link.text, href: link.href, file: route, status: response.status, ok: response.statusText };
+            if(response.statusText !== 'OK'){
+              return { text: link.text, href: link.href, file: route, status: response.status, ok: 'fail' };
+            }else{
+              return { text: link.text, href: link.href, file: route, status: response.status, ok: response.statusText };
+            }
           }).catch((error)=>{
           })
         );
