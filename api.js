@@ -1,16 +1,15 @@
 import fs, { link, read, readFile } from 'fs';
 import path from 'path';
-import axios, {isCancel, AxiosError} from 'axios';
 import fetch from 'node-fetch';
 
 export var route = process.argv[2];
 
 /*¿existe la ruta? boolean*/
 export const pathExist = (path) => fs.existsSync(path);
-export const isthisabs = (isA) => path.isAbsolute(isA); // no hay error
-export const isdir= (path) => fs.lstatSync(path).isDirectory() // no hay error
-export const toabsolute = (route) => path.resolve(route); // no hay error
-export const ismdFile = (file) => path.extname(file) === '.md'; //puede haber error
+export const isthisabs = (isA) => path.isAbsolute(isA);
+export const isdir= (path) => fs.lstatSync(path).isDirectory()
+export const toabsolute = (route) => path.resolve(route);
+export const ismdFile = (file) => path.extname(file) === '.md';
 
 export const readAll = {
     readFile: (read) => {
@@ -47,7 +46,11 @@ export const readAll = {
           })
         );
         return Promise.all(validation);
-      }
+      },
+      bronkenStats: (links) => {
+        const brokenLinks = links.filter((link) => response.statusText === 'fail');
+        return brokenLinks.length;
+      },
     }
 
     readAll.readFile('./ejercicios/archivo.md')
