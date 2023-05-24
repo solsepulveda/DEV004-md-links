@@ -2,7 +2,7 @@ import fs, { link, read, readFile } from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
 
-export var route = process.argv[2];
+const route = process.argv[2];
 
 /*¿existe la ruta? boolean*/
 export const pathExist = (path) => fs.existsSync(path);

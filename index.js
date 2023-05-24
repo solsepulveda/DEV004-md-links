@@ -3,9 +3,10 @@ import {
   ismdFile,
   isdir,
   readAll,
-  route,
   toabsolute,
 } from "./api.js";
+
+const route = process.argv[2];
 
 export const mdLinks = (path, options) => {
   return new Promise((resolve, reject) => {
