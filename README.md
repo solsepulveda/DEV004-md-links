@@ -3,15 +3,11 @@
 ## Índice
 
 * [1. Preámbulo](#1-Resumen)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
+* [2. Resumen del proyecto](#2-Diagramas-de-flujo)
+* [3. Objetivos de aprendizaje](#3-Planning)
+* [4. Consideraciones generales](#4-modo-de-uso)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Entregables](#6-entregables)
-* [7. Hacker edition](#7-hacker-edition)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
-* [10. Achicando el problema](#10-achicando-el-problema)
 
 ***
 
@@ -28,3 +24,44 @@ Para empezar este proyecto se realizaron dos diagramas de flujo para así poder 
 ![api](imgapi.jpg)
 
 ![cli](imgcli.jpg)
+
+## 3. Planning
+
+Planning en github, usando milestones e issues.
+
+## 4. Modo de uso
+
+Instalación
+
+Se puede instalar usando npm install solsepulveda/DEV004-md-links
+
+Comandos:
+
+md-links
+
+md-links --help
+
+md-links <ruta del archivo>
+
+por ejemplo:
+
+    md-links ./ejercicios/archivo.md
+
+md-links <ruta del archivo> --stats
+
+por ejemplo:
+
+    md-links ./ejercicios/archivo.md --stats
+
+md-links <ruta del archivo> --validate
+
+por ejemplo:
+
+        md-links ./ejercicios/archivo.md --validate
+
+md-links <ruta del archivo> --stats --validate
+md-links <ruta del archivo> --validate --stats
+
+por ejemplo:
+
+    md-links ./ejercicios/archivo.md --validate --stats
