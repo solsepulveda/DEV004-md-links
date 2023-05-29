@@ -1,5 +1,6 @@
 import { mdLinks } from "./index.js";
 import { argv } from "node:process";
+import chalk from 'chalk';
 
 const path = process.argv[2];
 const valstat =
@@ -64,9 +65,4 @@ ${chalk.bold.magentaBright("Unique:", uniqueLinks(links))}`);
 //option mal escrito
 else {
   console.log(`${chalk.hex("#ae2012")("Please, type a valid option")}`);
-}
-
-/*   else if
-(path && !argv.includes("--help","--validate","--stats")){
-  console.log('Please, type a valid option')
-  }; */
+};

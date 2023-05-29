@@ -24,16 +24,16 @@ export const readAll = {
         });
     },
 
-    getLinks: (result) => {
-        const regex = /\[([^\]]+)]\((https?:\/\/[^\s)]+)\)/gi;
-        const content = result.toString();
-        const matches = content.matchAll(regex);
-        const data = [];
-        for (const match of matches) {
-          data.push({text:match[1], href: match[2], file:route});
-        }
-        return data
-      },
+    getLinks: (read, route) => {
+      const regex = /\[([^\]]+)]\((https?:\/\/[^\s)]+)\)/gi;
+      const content = read.toString();
+      const matches = content.matchAll(regex);
+      const data = [];
+      for (const match of matches) {
+        data.push({ text: match[1], href: match[2], file: toabsolute(route || '') });
+      }
+      return data;
+    },
       validateLinks: (links) => {
         const validation = links.map((link) =>
           fetch(link.href).then((response) => {
@@ -48,7 +48,7 @@ export const readAll = {
         return Promise.all(validation);
       },
       bronkenStats: (links) => {
-        const brokenLinks = links.filter((link) => response.statusText === 'fail');
+        const brokenLinks = links.filter((link) => link.ok === 'fail');
         return brokenLinks.length;
       },
     }
@@ -58,8 +58,3 @@ export const readAll = {
         const links = readAll.getLinks(result);
       })
       .catch((error) => console.error(error));
-
-
-      var links = [
-        { text: 'Link 1', href: 'https://es.wikipedia.org/wiki/Markdown', file: 'file1' }
-      ];
