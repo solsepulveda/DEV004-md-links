@@ -25,6 +25,6 @@ propia librería (o biblioteca - library) en JavaScript para detectar links roto
 
 Para empezar este proyecto se realizaron dos diagramas de flujo para así poder tener trazados los pasos a seguir. Uno para la api y el otro para la línea de comando.
 
-![api](api.jpg)
+![api](imgapi.jpg)
 
-![cli](cli.jpg)
+![cli](imgcli.jpg)
