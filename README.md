@@ -37,30 +37,32 @@ Se puede instalar usando npm install solsepulveda/DEV004-md-links
 
 Comandos:
 
-md-links
+#### md-links
 
-md-links --help
+#### md-links --help
+Con este comando puedes visualizar todas las opciones que puedes utilizar.
 
-md-links <ruta del archivo>
+#### md-links <ruta>
+Con este comando puedes visualizar text, href y file.
 
 por ejemplo:
 
     md-links ./ejercicios/archivo.md
 
-md-links <ruta del archivo> --stats
+![example](image.png)
+#### md-links <ruta> --stats
 
 por ejemplo:
 
     md-links ./ejercicios/archivo.md --stats
 
-md-links <ruta del archivo> --validate
+#### md-links <ruta> --validate
 
 por ejemplo:
 
         md-links ./ejercicios/archivo.md --validate
 
-md-links <ruta del archivo> --stats --validate
-md-links <ruta del archivo> --validate --stats
+#### md-links <ruta> --stats --validate   ó   md-links <ruta> --validate --stats
 
 por ejemplo:
 
