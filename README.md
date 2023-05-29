@@ -5,9 +5,7 @@
 * [1. Preámbulo](#1-Resumen)
 * [2. Resumen del proyecto](#2-Diagramas-de-flujo)
 * [3. Objetivos de aprendizaje](#3-Planning)
-* [4. Consideraciones generales](#4-modo-de-uso)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Entregables](#6-entregables)
+* [4. Modo de uso](#4-modo-de-uso)
 
 ***
 
@@ -42,6 +40,11 @@ Comandos:
 #### md-links --help
 Con este comando puedes visualizar todas las opciones que puedes utilizar.
 
+por ejemplo:
+
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/9e2bde3e-ac83-442c-be63-b4b362714ad4)
+
+
 #### md-links <ruta>
 Con este comando puedes visualizar text, href y file.
 
@@ -49,12 +52,16 @@ por ejemplo:
 
     md-links ./ejercicios/archivo.md
 
-![example](image.png)
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/c8317759-cdd9-4112-b513-bca885ae7f94)
+  
 #### md-links <ruta> --stats
 
 por ejemplo:
 
     md-links ./ejercicios/archivo.md --stats
+  
+  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/cb5a634e-62e0-418c-8275-262b30f399d4)
+
 
 #### md-links <ruta> --validate
 
@@ -62,8 +69,12 @@ por ejemplo:
 
         md-links ./ejercicios/archivo.md --validate
 
+  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/94b64f84-2554-4b69-aec0-fb36f553f4a8)
+
 #### md-links <ruta> --stats --validate   ó   md-links <ruta> --validate --stats
 
 por ejemplo:
 
     md-links ./ejercicios/archivo.md --validate --stats
+
+  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/8c1dae8f-47de-401d-88b6-cee8c92ed03c)

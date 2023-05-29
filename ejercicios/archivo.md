@@ -9,7 +9,7 @@ encontrar varios archivos en ese formato en cualquier tipo de repositorio
 Dentro de una comunidad de código abierto, nos han propuesto crear una
 herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
 en formato `Markdown`, para verificar los links que contengan y reportar
-algunas estadísticas. Por ejemplo en Laboratoria podrían usar esta 
+algunas estadísticas. Por ejemplo en Laboratoria podrían usar esta
 herramienta para detectar los links rotos en los readmes de los proyectos
 o en un área de facturación verificar los links rotos de una factura dígital.
 
