@@ -30,7 +30,7 @@ export const readAll = {
       const matches = content.matchAll(regex);
       const data = [];
       for (const match of matches) {
-        data.push({ text: match[1], href: match[2], file: toabsolute(route || '') });
+        data.push({ text: match[1], href: match[2], file: toabsolute(route) });
       }
       return data;
     },
@@ -57,4 +57,4 @@ export const readAll = {
       .then((result) => {
         const links = readAll.getLinks(result);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));

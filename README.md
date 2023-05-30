@@ -2,9 +2,9 @@
 
 ## Índice
 
-* [1. Preámbulo](#1-Resumen)
-* [2. Resumen del proyecto](#2-Diagramas-de-flujo)
-* [3. Objetivos de aprendizaje](#3-Planning)
+* [1. Resumen](#1-Resumen)
+* [2. Planning](#2-Planning)
+* [3. Diagramas de flujo](#3-Diagramas-de-flujo)
 * [4. Modo de uso](#4-modo-de-uso)
 
 ***
@@ -13,19 +13,29 @@
 
 Markdown links es una herramienta de línea de comando (CLI) y
 propia librería (o biblioteca - library) en JavaScript para detectar links rotos.
+Al instalar este módulo serás capaz de detectar el status de tus links en archivos .md
+además de validar estos mismos.
 
 
-## 2. Diagramas de flujo
+## 2. Planning
+
+Planning en github, usando milestones e issues.
+
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/96f48b33-27e1-454c-bacc-bae1f33fdf52)
+
+Estas fueron las Tareas a realizar:
+
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/9bbdb430-abff-43e1-b48f-905ae5de0244)
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/fed8fab0-70ed-4af7-8a50-7cb26132326b)
+
+
+## 3. Diagramas de flujo
 
 Para empezar este proyecto se realizaron dos diagramas de flujo para así poder tener trazados los pasos a seguir. Uno para la api y el otro para la línea de comando.
 
 ![api](imgapi.jpg)
 
 ![cli](imgcli.jpg)
-
-## 3. Planning
-
-Planning en github, usando milestones e issues.
 
 ## 4. Modo de uso
 

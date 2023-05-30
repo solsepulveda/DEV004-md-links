@@ -8,7 +8,7 @@ import {
 } from "../api.js";
 import { mdLinks } from "../index.js";
 
-const route = "./ejercicios/archivo.md/";
+const route = "./ejercicios/archivo.md";
 const readContent =
   "[Markdown](https://es.wikipedia.org/wiki/Markdown)\n[Node.js](https://nodejs.org/)\n[markdown-it](https://github.com/markdown-it/markdown-it)\n[marked](https://github.com/markedjs/marked)";
 
@@ -19,6 +19,10 @@ const readContent =
     expect(a instanceof Promise).toBe(true);
   });
 }); */
+
+afterEach(() => {
+  jest.clearAllMocks();
+})
 
 //Verificar la función de si existe la ruta - boolean
 describe("pathExist", () => {
@@ -104,11 +108,13 @@ describe("getLinks", () => {
 });
 
 //lance un array con los z
-/* describe('getting status', () => {
+describe('getting status', () => {
   it('Debería retornar un array con los links y su status', () => {
-    const links = readAll.getLinks(readContent, route); // Obtener el array de enlaces
+    const links = readAll.getLinks(readContent, "./ejercicios/archivo.md"); // Obtener el array de enlaces
+    console.log({links})
     return readAll.validateLinks(links) // Pasar el array de enlaces a validateLinks
       .then((validatedLinks) => {
+        console.log({validatedLinks});
         expect(validatedLinks).toEqual([
           {
             text: 'Markdown',
@@ -127,7 +133,7 @@ describe("getLinks", () => {
         ]);
       });
   });
-}); */
+});
 
 describe("mdLinks", () => {
   it("should return this path does not exist ", () => {
