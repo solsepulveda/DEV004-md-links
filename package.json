@@ -1,7 +1,7 @@
 {
   "name": "@solsepulveda/md-links",
   "type": "module",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "engines": {
     "node": ">=16.x"
   },
@@ -40,6 +40,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@solsepulveda/md-links": "^0.1.8",
     "axios": "^1.4.0",
     "babel-jest": "^29.5.0",
     "chalk": "^4.1.2",

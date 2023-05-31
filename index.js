@@ -10,10 +10,10 @@ const route = process.argv[2];
 
 export const mdLinks = (path, options) => {
   return new Promise((resolve, reject) => {
-    !pathExist(route) ? reject("Error, path doesnt exist") : route;
-    if (ismdFile(route)) {
+    !pathExist(path) ? reject("Error, path doesnt exist") : path;
+    if (ismdFile(path)) {
       readAll
-        .readFile(route)
+        .readFile(path)
         .then((result) => {
           const get = readAll.getLinks(result); //hasta aquí con false
           if (!options) {

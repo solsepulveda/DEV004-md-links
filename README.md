@@ -47,12 +47,15 @@ Comandos:
 
 #### md-links
 
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/c598ae59-ced8-41a2-aa13-d52ef68696ab)
+
+
 #### md-links --help
 Con este comando puedes visualizar todas las opciones que puedes utilizar.
 
 por ejemplo:
 
-![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/9e2bde3e-ac83-442c-be63-b4b362714ad4)
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/14e864de-87be-49ff-8330-13f892be211d)
 
 
 #### md-links <ruta>
@@ -62,7 +65,7 @@ por ejemplo:
 
     md-links ./ejercicios/archivo.md
 
-![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/c8317759-cdd9-4112-b513-bca885ae7f94)
+![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/cb207898-4d93-447e-98dd-e0e4b6b5be4a)
   
 #### md-links <ruta> --stats
 
@@ -70,7 +73,7 @@ por ejemplo:
 
     md-links ./ejercicios/archivo.md --stats
   
-  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/cb5a634e-62e0-418c-8275-262b30f399d4)
+  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/27676af2-1df2-4ce3-ad0e-e54856ebb06b)
 
 
 #### md-links <ruta> --validate
@@ -79,7 +82,7 @@ por ejemplo:
 
         md-links ./ejercicios/archivo.md --validate
 
-  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/94b64f84-2554-4b69-aec0-fb36f553f4a8)
+  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/0d850c7a-e9ff-48dc-99a3-8e464e685f40)
 
 #### md-links <ruta> --stats --validate   ó   md-links <ruta> --validate --stats
 
@@ -87,4 +90,4 @@ por ejemplo:
 
     md-links ./ejercicios/archivo.md --validate --stats
 
-  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/8c1dae8f-47de-401d-88b6-cee8c92ed03c)
+  ![image](https://github.com/solsepulveda/DEV004-md-links/assets/122575839/433925c5-b303-4265-aafc-d8368d1314de)
