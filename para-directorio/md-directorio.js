@@ -1,13 +1,13 @@
 
 /* leer directorio - se convertirá en absoluto porque o si no me lo devuelve relativo*/
-export const readDir = (dir) => {
+/* export const readDir = (dir) => {
     const files = fs.readdirSync(dir);
     return files.map((file) => path.resolve(file));
-  };
+  }; */
 /*   console.log('leer directorio:',readDir('./ejercicios')); */
 
 /* se lee el directorio y se extrae solo los archivos .md*/
-export const getMd = (path) => isdir(path) && readDir(path).length > 0  ? readDir(path).filter(ismdFile) : 'isempty' ;
+/* export const getMd = (path) => isdir(path) && readDir(path).length > 0  ? readDir(path).filter(ismdFile) : 'isempty' ; */
 /* console.log(getMd('./ejercicios2')); */
 
 /* export const mdLinks = (
