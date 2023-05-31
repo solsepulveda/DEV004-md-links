@@ -53,8 +53,8 @@ export const readAll = {
       },
     }
 
-    readAll.readFile('./ejercicios/archivo.md')
+/*     readAll.readFile('./ejercicios/archivo.md')
       .then((result) => {
         const links = readAll.getLinks(result);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error)); */
